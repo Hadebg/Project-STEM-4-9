@@ -21,7 +21,7 @@ byte data_count = 0;
 
 //Row and column size
 #define ROWS 4
-#define COLS 4
+#define COLS 3
 
 //Represent keys on keypad
 char hexaKeys[ROWS][COLS] = {
