@@ -11,9 +11,9 @@
 
 #define frequen 5000
 #define res 8
+#define lockOutput 13
 char cmd;
 char customKey;
-int lockOutput = 13;
 byte data_count = 0;
 
 //Servo position
