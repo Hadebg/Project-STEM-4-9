@@ -10,18 +10,19 @@ DCMotor::DCMotor(int8_t forward_pin, int8_t backward_pin, int8_t enable_pin) {
 }
 
 void DCMotor::Run(int PWM) {
-    analogWrite(enable, (PWM>0)?(PWM):(0));
-    analogWrite(enable, (PWM>0)?(0):(-PWM));
     if(PWM>0){
         digitalWrite(forward, HIGH);
         digitalWrite(backward, LOW);
+        analogWrite(enable, PWM);
     }
     else if(PWM<0){
         digitalWrite(forward, LOW);
         digitalWrite(backward, HIGH);
+        analogWrite(enable, -PWM);
     }
     else{
         digitalWrite(forward, LOW);
         digitalWrite(backward, LOW);
+        analogWrite(enable, 0);
     }
 }
