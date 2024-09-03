@@ -10,7 +10,7 @@
 
 BluetoothSerial BluetoothController;
 Keypad customKeypad = Keypad(makeKeymap(hexaKeys), rowPins, colPins, ROWS, COLS);
-LiquidCrystal_I2C lcd(0x3F, 16, 2);
+LiquidCrystal_I2C lcd(0x27, 16, 2);
 //esp32_motor leftMotor(LF, LB, 1, 2, frequen, res);
 //esp32_motor rightMotor(RF, RB, 3, 4, frequen, res);
 DCMotor leftMotor(LF, LB, ENA);
