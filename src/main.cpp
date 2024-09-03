@@ -93,7 +93,7 @@ void loop(){
     else {
       Serial.println("Password is incorrect!");
       lcd.print("Sai! Thu lai");
-      delay(1000);
+      delay(3000);
     }
     lcd.clear();
     clearData();
