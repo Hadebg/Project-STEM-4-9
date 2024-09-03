@@ -27,7 +27,6 @@ void setup(){
 
 void loop(){
    if (BluetoothController.available()) {
-    Serial.println("Bot initialized!");
     lcd.setCursor(0, 0);
     lcd.print("Nhap mat khau:");
     cmd = BluetoothController.read();
