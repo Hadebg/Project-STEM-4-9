@@ -77,7 +77,7 @@ void loop(){
     data_count++;
     Serial.println(customKey);
     lcd.setCursor(data_count, 1);
-    lcd.print(Data[data_count]);
+    lcd.print(customKey);
     delay(700); //Prevent continuous press
   }
   //Check password
