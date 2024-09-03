@@ -36,9 +36,9 @@ char hexaKeys[ROWS][COLS] = {
 byte rowPins[ROWS] = {19, 18, 5, 17};
 byte colPins[COLS] = {16, 4, 2, 15};
 
-#define Password_Length 8
+#define Password_Length 7
 char Data[Password_Length];
-char Master[Password_Length] = "123A456";
+char Master[Password_Length] = "147258";
 
 void clearData();
 
