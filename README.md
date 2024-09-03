@@ -1,5 +1,6 @@
 # Goods shipping robot (Project to display at NGT's opening ceremony of the new school year)
-Coding date: 2/9/2024 - 3/9/2024 (DD/MM/YY)
+Coding date: 2/9/2024 - 3/9/2024 (DD/MM/YY) 
+
 Requirement:
 - ESP32 DOIT DEVKIT V1
 - 2 or 4 DC motor engines
