@@ -6,4 +6,5 @@ Requirement:
 - 2 or 4 DC motor engines
 - LCD 16x2 I2C (0x27)
 - Matrix keypad (4x4)
+- Module H-bridge L298N
 - Application: Bluetooth RC controller (download APK)
