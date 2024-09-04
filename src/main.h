@@ -14,10 +14,11 @@
 #define res 8
 char cmd;
 char customKey;
+int Convert;
 byte data_count = 0;
 
 //Servo position
-#define Unlock 300
+#define Unlock 800
 #define Lock 150
 
 //Row and column size
@@ -36,9 +37,9 @@ char hexaKeys[ROWS][COLS] = {
 byte rowPins[ROWS] = {19, 18, 5, 17};
 byte colPins[COLS] = {16, 4, 2, 15};
 
-#define Password_Length 7
+#define Password_Length 9
 char Data[Password_Length];
-char Master[Password_Length] = "147258";
+char Master[Password_Length] = "14B22222";
 
 void clearData();
 
