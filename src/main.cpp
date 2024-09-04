@@ -23,53 +23,59 @@ void setup(){
   DoorLocker.attach(DoorLock_Pin);
   lcd.backlight();
   lcd.init();
+  Serial.println("Not connected!");
+  DoorLocker.write(Lock);
+  if (BluetoothController.available()){
+    Serial.println("Bot initialized!");
+  }
 }
 
 void loop(){
-   if (BluetoothController.available()) {
-    lcd.setCursor(0, 0);
-    lcd.print("Nhap mat khau:");
+  if (BluetoothController.available()) {
     cmd = BluetoothController.read();
-    customKey = customKeypad.getKey();
-    switch(cmd){
-    //Movement
-      case 'F':  
-        leftMotor.Run(230);
-        rightMotor.Run(230);
-        break;
-      case 'B':  
-        leftMotor.Run(-230);
-        rightMotor.Run(-230);
-        break;
-      case 'R':  
-        leftMotor.Run(230);
-        rightMotor.Run(-230);
-        break;
-      case 'L':
-        leftMotor.Run(-230);
-        rightMotor.Run(230);
-        break;
-      case 'I':
-        leftMotor.Run(230);
-        rightMotor.Run(140);
-        break;
-      case 'G':
-        leftMotor.Run(140);
-        rightMotor.Run(230);
-        break;
-      case 'J':
-        leftMotor.Run(-230);
-        rightMotor.Run(-100);
-        break;
-      case 'H':
-        leftMotor.Run(-100);
-        rightMotor.Run(-230);
-        break;
-      case 'S':
-        leftMotor.Run(0);
-        rightMotor.Run(0);
-        break;
-    }
+  }
+  lcd.setCursor(0, 0);
+  lcd.print("Nhap mat khau:");
+  customKey = customKeypad.getKey();
+  switch(cmd){
+  //Movement
+    case 'F':  
+      leftMotor.Run(230);
+      rightMotor.Run(230);
+      break;
+    case 'B':  
+      leftMotor.Run(-230);
+      rightMotor.Run(-230);
+      break;
+    case 'R':  
+      leftMotor.Run(230);
+      rightMotor.Run(-230);
+      break;
+    case 'L':
+      leftMotor.Run(-230);
+      rightMotor.Run(230);
+      break;
+    case 'I':
+      leftMotor.Run(230);
+      rightMotor.Run(140);
+      break;
+    case 'G':
+      leftMotor.Run(140);
+      rightMotor.Run(230);
+      break;
+    case 'J':
+      leftMotor.Run(-230);
+      rightMotor.Run(-100);
+      break;
+    case 'H':
+      leftMotor.Run(-100);
+      rightMotor.Run(-230);
+      break;
+    case 'S':
+      leftMotor.Run(0);
+      rightMotor.Run(0);
+      break;
+  }
 
   if (customKey){ //Get key from keypad
     Data[data_count] = customKey;
@@ -77,7 +83,6 @@ void loop(){
     Serial.println(customKey);
     lcd.setCursor(data_count, 1);
     lcd.print(customKey);
-    delay(300); //Prevent continuous press
   }
   //Check password
   if (data_count == Password_Length - 1){
@@ -88,17 +93,20 @@ void loop(){
       DoorLocker.write(Unlock);
       delay(10000); //Wait 10 seconds before locking the door
       DoorLocker.write(Lock);
+      lcd.clear();
+      lcd.print("Da khoa!");
+      delay(1500);
     }
     else {
       Serial.println("Password is incorrect!");
       lcd.print("Sai! Thu lai");
-      delay(3000);
+      delay(1500);
     }
     lcd.clear();
     clearData();
   }
- }
 }
+
 
 void clearData() {
   while (data_count != 0) {
