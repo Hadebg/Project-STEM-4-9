@@ -1,6 +1,5 @@
 #include <Arduino.h>
 #include <BluetoothSerial.h>
-#include <esp32_motor.h>
 #include <main.h>
 #include <ESP32Servo.h>
 #include <Keypad.h>
