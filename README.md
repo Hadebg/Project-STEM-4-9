@@ -10,7 +10,7 @@ Requirement:
 - Application: Bluetooth RC controller (download APK)
 - 12V battery
 
-Connection: 
+Connection: (you can change pin if you wish but remember to change in the code also)
 - Connect 12V battery to 12V input in module H-bridge, connect 5V output from module H-bridge to ESP32 through VIN pin and GND pin
 - LCD 16x2 I2C (5V): SCL -> 22, SDA -> 21
 - Module H-bridge: IN1 -> 25, IN2 -> 26, IN3 -> 27, IN4 -> 14, ENA -> 32, ENB -> 33
@@ -21,4 +21,4 @@ Library used: BluetoothSerial, ESP32Servo, Keypad, LiquuidCrystal I2C, DCmotor (
 
 IDE: PlatformIO in Visual Studio Code
 
-Language showing on LCD screen is Vietnamese
+Language showing on LCD screen is Vietnamese (I translated them in my code, check cpp)
