@@ -17,7 +17,7 @@ Connection:
 - Matrix keypad 4x4: R1 -> 19, R2 -> 18, R3 -> 5, R4 -> TX2 (17), C1 -> RX2 (16), C2 -> 4, C3 -> 2, C4 -> 15
 - DC Motor engines: Connect to the DC motor output in module H-bridge
 
-Library used: BluetoothSerial, ESP32Servo, Keypad, LiquuidCrystal I2C, DCmotor (I wrote myself for L298N using analog, check lib)
+Library used: BluetoothSerial, ESP32Servo, Keypad, LiquuidCrystal I2C, DCmotor (I wrote myself for L298N using analog, check lib folder)
 
 IDE: PlatformIO in Visual Studio Code
 
