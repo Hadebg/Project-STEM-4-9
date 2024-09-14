@@ -35,7 +35,7 @@ void loop(){
     cmd = BluetoothController.read();
   }
   lcd.setCursor(0, 0);
-  lcd.print("Nhap mat khau:");
+  lcd.print("Nhap mat khau:"); //(LCD: Enter password:)
   customKey = customKeypad.getKey();
   switch(cmd){
   //Movement
@@ -89,17 +89,17 @@ void loop(){
     lcd.clear();
     if (!strcmp(Data, Master)){
       Serial.println("Password is correct!");
-      lcd.print("Da mo khoa!");
+      lcd.print("Da mo khoa!"); //(LCD: Unlocked!)
       DoorLocker.write(Unlock);
       delay(10000); //Wait 10 seconds before locking the door
       DoorLocker.write(Lock);
       lcd.clear();
-      lcd.print("Da khoa!");
+      lcd.print("Da khoa!"); //(LCD: Locked!)
       delay(1500);
     }
     else {
       Serial.println("Password is incorrect!");
-      lcd.print("Sai! Thu lai");
+      lcd.print("Sai! Thu lai!"); //(LCD: Wrong! Retry!)
       delay(1500);
     }
     lcd.clear();
