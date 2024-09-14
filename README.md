@@ -8,3 +8,5 @@ Requirement:
 - Matrix keypad (4x4)
 - Module H-bridge L298N
 - Application: Bluetooth RC controller (download APK)
+
+Connection: Check main.h
